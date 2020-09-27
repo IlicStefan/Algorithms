@@ -1,19 +1,17 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
+#include <iostream>
+#include <vector>
 
 class PermutationsPrinter {
 private:
   int n;
-  vector<int> permutation;
-  vector<bool> chosen;
+  std::vector<int> permutation;
+  std::vector<bool> chosen;
 
   void printPermutation() {
-    cout << "{ ";
+    std::cout << "{ ";
     for(auto x : permutation)
-      cout << x << " ";
-    cout << "}\n";
+      std::cout << x << " ";
+    std::cout << "}\n";
   }
 
 public:
@@ -25,7 +23,7 @@ public:
   }
   
   void print() {
-    if((int)permutation.size() == n) {
+    if(static_cast<int>(permutation.size()) == n) {
       printPermutation();
     }
     else {
@@ -43,11 +41,11 @@ public:
 };
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
 
   int n;
-  cin >> n;
+  std::cin >> n;
   PermutationsPrinter aPermutationsPrinter(n);
 
   aPermutationsPrinter.print();
